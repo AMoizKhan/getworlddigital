@@ -1,0 +1,12 @@
+export { About } from "./About";
+export { CTA } from "./CTA";
+export { Expertise } from "./Expertise";
+export { FAQ } from "./FAQ";
+export { Hero } from "./Hero";
+export { Industries } from "./Industries";
+export { Portfolio } from "./Portfolio";
+export { Process } from "./Process";
+export { Services } from "./Services";
+export { Testimonials } from "./Testimonials";
+export { TrustIndicators } from "./TrustIndicators";
+export { WhyChooseUs } from "./WhyChooseUs";
