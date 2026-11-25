@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600" preserveAspectRatio="xMaxYMid slice" fill="none">
+  <defs>
+    <!-- Pure white left transitioning into crisp ice-blue right -->
+    <linearGradient id="banner-base" x1="0" y1="300" x2="1920" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="38%" stop-color="#fbfdff" />
+      <stop offset="72%" stop-color="#eef7ff" />
+      <stop offset="100%" stop-color="#e3f3ff" />
+    </linearGradient>
+
+    <!-- Soft upper sweeping mist wave -->
+    <linearGradient id="wave-upper" x1="0" y1="0" x2="1920" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#edf7ff" stop-opacity="0.7" />
+      <stop offset="48%" stop-color="#d4eeff" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#9ad5ff" stop-opacity="0.65" />
+    </linearGradient>
+
+    <!-- Long bottom-left to right sweeping sky ribbon -->
+    <linearGradient id="wave-bottom" x1="220" y1="600" x2="1920" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e3f4ff" stop-opacity="0.45" />
+      <stop offset="42%" stop-color="#b8e3ff" stop-opacity="0.72" />
+      <stop offset="100%" stop-color="#79c8ff" stop-opacity="0.78" />
+    </linearGradient>
+
+    <!-- Mid-right crisp translucent sky facet -->
+    <linearGradient id="facet-mid" x1="955" y1="340" x2="1780" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#69c0ff" stop-opacity="0.74" />
+      <stop offset="55%" stop-color="#8fd2ff" stop-opacity="0.58" />
+      <stop offset="100%" stop-color="#c2e7ff" stop-opacity="0.5" />
+    </linearGradient>
+
+    <!-- Foreground vibrant cyan-royal-blue geometric sail -->
+    <linearGradient id="sail-vibrant" x1="1470" y1="420" x2="1920" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b95ff" stop-opacity="0.92" />
+      <stop offset="55%" stop-color="#35adff" stop-opacity="0.86" />
+      <stop offset="100%" stop-color="#84d0ff" stop-opacity="0.68" />
+    </linearGradient>
+
+    <!-- Outer right soft overlapping glass curve -->
+    <linearGradient id="right-glass" x1="1620" y1="0" x2="1920" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#76c6ff" stop-opacity="0.55" />
+      <stop offset="60%" stop-color="#45b2ff" stop-opacity="0.58" />
+      <stop offset="100%" stop-color="#9dd8ff" stop-opacity="0.48" />
+    </linearGradient>
+  </defs>
+
+  <!-- Crisp Base -->
+  <rect width="1920" height="600" fill="url(#banner-base)" />
+
+  <!-- Subtle upper flowing light-blue veil -->
+  <path d="M0 0 H740 C1020 90, 1420 120, 1920 82 V290 C1380 265, 760 220, 0 95 Z" fill="url(#wave-upper)" />
+
+  <!-- Soft mid translucent arc -->
+  <path d="M510 600 C610 280, 920 165, 1340 245 C1580 290, 1780 250, 1920 190 V600 Z" fill="#d9f0ff" opacity="0.5" />
+
+  <!-- Sweeping bottom diagonal light-sky ribbon -->
+  <path d="M210 600 C660 405, 1260 280, 1920 265 V600 Z" fill="url(#wave-bottom)" />
+
+  <!-- Clean geometric diagonal overlapping facet right-center -->
+  <path d="M960 356 C1060 190, 1210 55, 1355 0 H1920 V290 C1570 300, 1240 330, 960 356 Z" fill="url(#facet-mid)" />
+
+  <!-- Soft translucent wave crest arching down right-center -->
+  <path d="M960 356 C1250 285, 1600 225, 1920 185 V470 C1580 455, 1240 410, 960 356 Z" fill="#82ccff" opacity="0.34" />
+
+  <!-- Signature vibrant azure geometric sail on right -->
+  <path d="M1470 422 C1540 220, 1665 80, 1795 0 H1920 V275 C1775 345, 1620 392, 1470 422 Z" fill="url(#sail-vibrant)" />
+
+  <!-- Rightmost sweeping translucent glass curve -->
+  <path d="M1675 600 C1620 390, 1705 180, 1895 0 H1920 V600 Z" fill="url(#right-glass)" />
+
+  <!-- Crisp delicate curved highlight edge -->
+  <path d="M960 356 C1255 318, 1590 292, 1920 282" stroke="#ffffff" stroke-width="2" opacity="0.35" />
+</svg>

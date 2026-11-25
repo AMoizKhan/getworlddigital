@@ -46,11 +46,12 @@ export function CTA() {
       <Container>
         <Reveal>
           <div className="relative isolate overflow-hidden rounded-3xl border border-[#dbe6ff]/90 bg-white shadow-2xl shadow-blue-900/[0.08]">
-            {/* Attached blue wave banner background */}
+            {/* Crisp HD vector wave banner background */}
             <Image
-              src="/home/cta-banner-bg.webp"
+              src="/home/cta-banner-hd.svg"
               alt=""
               fill
+              unoptimized
               sizes="(min-width: 1280px) 1280px, 100vw"
               className="-z-10 object-cover object-right"
             />

@@ -37,9 +37,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden"
         >
           <Image
-            src="/brand/site-bg.webp"
+            src="/brand/site-bg-hd.svg"
             alt=""
             fill
+            unoptimized
             loading="eager"
             sizes="100vw"
             className="object-cover object-center"
