@@ -15,7 +15,7 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-center justify-center rounded-2xl border border-[#dbe6ff] bg-[#f6f9ff] px-6 py-12 text-center">
+      <div className="flex flex-col items-center justify-center rounded-2xl border border-slate-200/80 bg-white px-6 py-12 text-center">
         <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#1f4fe0] text-white shadow-md shadow-blue-600/25">
           <CheckCircle2 className="h-7 w-7" />
         </div>
@@ -36,7 +36,7 @@ export function ContactForm() {
   }
 
   const inputClasses =
-    "w-full rounded-xl border border-slate-200 bg-[#f8faff] px-4 py-2.5 text-sm text-[#0b1533] placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-[#1f4fe0] focus:bg-white focus:ring-4 focus:ring-[#1f4fe0]/10";
+    "w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-[#0b1533] placeholder:text-slate-400 outline-none transition-all duration-200 focus:border-[#1f4fe0] focus:bg-white focus:ring-4 focus:ring-[#1f4fe0]/10";
 
   return (
     <form className="mt-6 space-y-5" onSubmit={handleSubmit}>

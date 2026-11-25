@@ -3,6 +3,7 @@ export type Project = {
   title: string;
   client: string;
   industry: string;
+  image: string;
   summary: string;
   services: string[];
   results: string[];
@@ -15,8 +16,9 @@ export const projects: Project[] = [
     title: "Retail E-Commerce Rebuild",
     client: "Northline Apparel",
     industry: "Retail",
+    image: "/portfolio/retail-ecommerce.webp",
     summary:
-      "Rebuilt a legacy storefront into a fast, conversion-focused e-commerce platform with streamlined checkout.",
+      "Rebuilt a legacy storefront into a fast, conversion-focused e-commerce platform with streamlined checkout across desktop, tablet, and mobile.",
     services: ["E-Commerce Solutions", "UI/UX Design", "Web Development"],
     results: [
       "42% increase in conversion rate",
@@ -27,11 +29,12 @@ export const projects: Project[] = [
   },
   {
     slug: "fintech-mobile-app",
-    title: "Fintech Mobile App",
-    client: "PulsePay",
+    title: "Marketplace & Community Mobile App",
+    client: "Swappo",
     industry: "Finance",
+    image: "/portfolio/mobile-app.webp",
     summary:
-      "Designed and launched a cross-platform mobile app for personal finance tracking and payments.",
+      "Designed and launched a cross-platform mobile app featuring peer-to-peer swaps, real-time messaging, map discovery, and instant listings.",
     services: ["Mobile App Development", "UI/UX Design"],
     results: [
       "50K+ downloads in first quarter",
@@ -42,61 +45,65 @@ export const projects: Project[] = [
   },
   {
     slug: "healthcare-patient-portal",
-    title: "Healthcare Patient Portal",
-    client: "CareBridge Clinics",
+    title: "Healthcare Care & Intake Platform",
+    client: "Enduring Hearts Healthcare",
     industry: "Healthcare",
+    image: "/portfolio/healthcare-portal.webp",
     summary:
-      "Built a secure patient portal for appointments, records access, and messaging with care teams.",
+      "Built an accessible, compassionate healthcare web platform with streamlined care intake, referral forms, and service discovery.",
     services: ["Web Development", "UI/UX Design"],
     results: [
       "60% fewer phone booking calls",
       "Improved patient satisfaction scores",
-      "HIPAA-aligned architecture",
+      "Accessible, compliance-aligned UX",
     ],
     featured: true,
   },
   {
     slug: "saas-marketing-site",
-    title: "SaaS Marketing Site & Lead Engine",
-    client: "Stackflow CRM",
+    title: "AI Mobility & Operations CRM Dashboard",
+    client: "MetroSync Control",
     industry: "Technology",
+    image: "/portfolio/crm-analytics.webp",
     summary:
-      "Launched a high-converting marketing site with SEO content hubs and integrated lead capture.",
-    services: ["Web Development", "Digital Marketing", "UI/UX Design"],
+      "Engineered a real-time CRM and telemetry operations dashboard with predictive analytics, incident alerts, and automated scheduling.",
+    services: ["Web Development", "UI/UX Design", "CRM Systems"],
     results: [
-      "2.4× organic traffic in 6 months",
-      "180% increase in demo requests",
-      "Top-3 rankings for key product terms",
+      "94% real-time prediction accuracy",
+      "45% faster incident response times",
+      "Unified multi-region analytics hub",
     ],
     featured: true,
   },
   {
     slug: "hospitality-brand-refresh",
-    title: "Hospitality Brand Refresh",
-    client: "Harbor & Pine Hotels",
+    title: "Live Events & Ticketing Web Platform",
+    client: "Zumic Events",
     industry: "Hospitality",
+    image: "/portfolio/web-events.webp",
     summary:
-      "Delivered a full brand identity refresh and booking-focused website redesign across properties.",
+      "Delivered a modern event discovery and ticketing web application with instant location filtering, scheduling, and responsive booking flows.",
     services: ["Branding & Identity", "Web Development"],
     results: [
-      "Unified brand across 12 locations",
-      "22% lift in direct bookings",
+      "Unified event discovery across regions",
+      "22% lift in direct ticket conversions",
       "Consistent guest experience online",
     ],
     featured: false,
   },
   {
     slug: "education-lms-platform",
-    title: "Education LMS Platform",
-    client: "LearnPath Academy",
+    title: "Talent Advisory & Recruitment Portal",
+    client: "Deembase",
     industry: "Education",
+    image: "/portfolio/web-recruitment.webp",
     summary:
-      "Developed a learning management platform with course delivery, progress tracking, and assessments.",
+      "Developed a clean B2B advisory portal with meeting scheduling, client dashboards, and streamlined recruitment workflow tooling.",
     services: ["Web Development", "UI/UX Design"],
     results: [
-      "10K+ enrolled learners",
-      "Course completion rate up 31%",
-      "Admin tooling cut ops time by half",
+      "2.4× qualified consultation bookings",
+      "40% reduction in onboarding friction",
+      "Modern bilingual web architecture",
     ],
     featured: false,
   },

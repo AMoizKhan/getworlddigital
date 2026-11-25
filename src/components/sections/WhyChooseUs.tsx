@@ -62,7 +62,7 @@ export function WhyChooseUs() {
         {/* Visual column */}
         <Reveal delay={160} className="lg:col-span-5">
           <div className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-3 shadow-lg shadow-blue-900/[0.05] transition-all duration-500 hover:shadow-xl hover:shadow-blue-600/10">
-            <div className="overflow-hidden rounded-2xl bg-[#f5f8ff]">
+            <div className="overflow-hidden rounded-2xl bg-white">
               <Image
                 src="/home/why-choose-us.svg"
                 alt="Outcome-driven roadmap and client impact dashboard"

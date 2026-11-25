@@ -19,7 +19,7 @@ const team = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden border-b border-slate-100 bg-[linear-gradient(105deg,#ffffff_0%,#f7f9ff_50%,#edf2ff_100%)] py-16 sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-slate-100 bg-white py-16 sm:py-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-[#dbe7ff]/60 blur-3xl"
@@ -53,7 +53,7 @@ export default function AboutPage() {
 
             <div className="lg:col-span-6">
               <div className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-3 shadow-lg shadow-blue-900/[0.05]">
-                <div className="overflow-hidden rounded-2xl bg-[#f5f8ff]">
+                <div className="overflow-hidden rounded-2xl bg-white">
                   <Image
                     src="/home/about-agency.svg"
                     alt="GetWorldDigital team workflow and growth overview"

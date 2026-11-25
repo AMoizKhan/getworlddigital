@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden border-b border-slate-100 bg-[linear-gradient(105deg,#ffffff_0%,#f7f9ff_50%,#edf2ff_100%)] py-16 sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-slate-100 bg-white py-16 sm:py-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-[#dbe7ff]/60 blur-3xl"
@@ -37,7 +37,7 @@ export default function PortfolioPage() {
         eyebrow="Browse Work"
         title="Filter by"
         highlight="industry."
-        subtitle="Project media slots are kept clean and ready for your own uploaded screenshots."
+        subtitle="Explore our web, mobile, e-commerce, and CRM project showcases across industries."
         tone="white"
       >
         <PortfolioGrid />

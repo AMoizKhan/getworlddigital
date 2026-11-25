@@ -1,6 +1,6 @@
 import {
   Code2,
-  Layers,
+  LayoutDashboard,
   Palette,
   ShoppingBag,
   Smartphone,
@@ -23,7 +23,7 @@ export function ServiceIcon({ slug, className = "h-6 w-6" }: ServiceIconProps) {
     case "ecommerce-solutions":
       return <ShoppingBag className={className} />;
     case "branding-identity":
-      return <Layers className={className} />;
+      return <LayoutDashboard className={className} />;
     case "web-development":
     default:
       return <Code2 className={className} />;

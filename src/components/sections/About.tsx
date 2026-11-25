@@ -45,7 +45,7 @@ export function About() {
         {/* Visual column */}
         <Reveal className="lg:col-span-6">
           <div className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-3 shadow-lg shadow-blue-900/[0.05] transition-all duration-500 hover:shadow-xl hover:shadow-blue-600/10">
-            <div className="relative overflow-hidden rounded-2xl bg-[#f5f8ff]">
+            <div className="relative overflow-hidden rounded-2xl bg-white">
               <Image
                 src="/home/about-agency.svg"
                 alt="GetWorldDigital collaborative digital workspace and analytics overview"

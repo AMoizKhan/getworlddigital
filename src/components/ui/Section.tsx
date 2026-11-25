@@ -15,12 +15,6 @@ type SectionProps = {
   className?: string;
 };
 
-const toneClasses: Record<SectionTone, string> = {
-  white: "bg-white",
-  tinted: "bg-[#f6f9ff]",
-  gradient: "bg-gradient-to-b from-white via-[#f7f9ff] to-[#eef3ff]/70",
-};
-
 export function Section({
   id,
   eyebrow,
@@ -28,7 +22,6 @@ export function Section({
   highlight,
   subtitle,
   align = "left",
-  tone = "white",
   children,
   className = "",
 }: SectionProps) {
@@ -37,7 +30,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative border-b border-slate-100 py-18 sm:py-22 ${toneClasses[tone]} ${className}`}
+      className={`relative border-b border-slate-100 bg-white py-18 sm:py-22 ${className}`}
     >
       <Container>
         <div
@@ -46,7 +39,7 @@ export function Section({
           }`}
         >
           {eyebrow ? (
-            <span className="inline-flex items-center rounded-full bg-[#e6eeff] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#1d4ed8]">
+            <span className="inline-flex items-center rounded-full border border-[#dbe6ff] bg-white px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#1d4ed8]">
               {eyebrow}
             </span>
           ) : null}

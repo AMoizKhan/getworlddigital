@@ -9,21 +9,11 @@ const perks = [
 
 export function CTA() {
   return (
-    <section className="bg-white py-18 sm:py-22">
+    <section className="border-b border-slate-100 bg-white py-18 sm:py-22">
       <Container>
         <Reveal>
-          <div className="relative isolate overflow-hidden rounded-3xl border border-[#dbe6ff] bg-[linear-gradient(115deg,#ffffff_0%,#f5f8ff_52%,#e8f0ff_100%)] p-8 text-center shadow-xl shadow-blue-900/[0.06] sm:p-14">
-            {/* Soft decorative accents matching hero theme */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full bg-[#dbe7ff]/70 blur-2xl"
-            />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -bottom-24 -left-24 -z-10 h-72 w-72 rounded-full bg-[#e6eeff]/80 blur-2xl"
-            />
-
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#e6eeff] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#1d4ed8]">
+          <div className="relative isolate overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 text-center shadow-xl shadow-slate-900/[0.04] sm:p-14">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#dbe6ff] bg-white px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#1d4ed8]">
               <Calendar className="h-3.5 w-3.5" />
               Start Your Next Project
             </span>

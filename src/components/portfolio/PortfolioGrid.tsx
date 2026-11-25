@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
-import { CheckCircle2, ImagePlus, Sparkles } from "lucide-react";
+import { CheckCircle2, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui";
 import { industries, projects } from "@/data/projects";
 
@@ -40,70 +41,74 @@ export function PortfolioGrid() {
         })}
       </div>
 
-      {/* Case studies grid — NO generated images, clean upload-ready frames */}
+      {/* Case studies grid with clean extracted thumbnails */}
       <div className="grid gap-6 md:grid-cols-2">
         {filteredProjects.map((project) => (
-          <Card key={project.slug} className="flex h-full flex-col p-6">
-            <div className="relative mb-5 flex aspect-[16/9] w-full flex-col items-center justify-center overflow-hidden rounded-xl border border-dashed border-[#c5d7fb] bg-[radial-gradient(#dbe7ff_1px,transparent_1px)] bg-[#f7faff] [background-size:18px_18px] p-6 text-center transition-colors duration-300 group-hover:border-[#1f4fe0]/60 group-hover:bg-[#f0f5ff]">
-              <div className="mb-2.5 flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#1f4fe0] shadow-sm shadow-blue-900/5 transition-transform duration-300 group-hover:scale-110">
-                <ImagePlus className="h-5 w-5" />
+          <Card
+            key={project.slug}
+            className="flex h-full flex-col overflow-hidden p-0"
+          >
+            <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-slate-100 bg-white">
+              <Image
+                src={project.image}
+                alt={`${project.title} — ${project.client}`}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1533]/18 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="absolute left-4 top-4 flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-[#1d4ed8] shadow-sm backdrop-blur-sm">
+                  {project.industry}
+                </span>
+                {project.featured ? (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[#1f4fe0] px-2.5 py-1 text-xs font-semibold text-white shadow-sm">
+                    <Sparkles className="h-3 w-3" />
+                    Featured
+                  </span>
+                ) : null}
               </div>
-              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#0b1533]">
-                {project.client} · Case Study Media
-              </p>
-              <p className="mt-1 text-xs text-slate-500">
-                Ready for your uploaded project image
-              </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center rounded-full bg-[#e6eeff] px-3 py-0.5 text-xs font-semibold text-[#1d4ed8]">
-                {project.industry}
-              </span>
-              <span className="text-xs font-medium text-slate-500">
+            <div className="flex flex-1 flex-col p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">
                 {project.client}
-              </span>
-              {project.featured ? (
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#eef3ff] px-2.5 py-0.5 text-xs font-semibold text-[#1f4fe0]">
-                  <Sparkles className="h-3 w-3" />
-                  Featured
-                </span>
-              ) : null}
-            </div>
-
-            <h2 className="mt-3 text-xl font-bold text-[#0b1533] transition-colors group-hover:text-[#1f4fe0]">
-              {project.title}
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">
-              {project.summary}
-            </p>
-
-            <div className="mt-4 flex flex-wrap gap-2">
-              {project.services.map((service) => (
-                <span
-                  key={service}
-                  className="rounded-lg border border-slate-200/80 bg-[#f8faff] px-2.5 py-1 text-xs font-medium text-slate-700"
-                >
-                  {service}
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-5 border-t border-slate-100 pt-4">
-              <p className="text-xs font-bold uppercase tracking-[0.08em] text-slate-500">
-                Key Results
               </p>
-              <ul className="mt-2.5 space-y-1.5">
-                {project.results.map((result) => (
-                  <li
-                    key={result}
-                    className="flex items-start gap-2 text-sm font-medium text-slate-700"
+
+              <h2 className="mt-1.5 text-xl font-bold text-[#0b1533] transition-colors group-hover:text-[#1f4fe0]">
+                {project.title}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                {project.summary}
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.services.map((service) => (
+                  <span
+                    key={service}
+                    className="rounded-lg border border-slate-200/80 bg-white px-2.5 py-1 text-xs font-medium text-slate-700"
                   >
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#1f4fe0]" />
-                    <span>{result}</span>
-                  </li>
+                    {service}
+                  </span>
                 ))}
-              </ul>
+              </div>
+
+              <div className="mt-5 border-t border-slate-100 pt-4">
+                <p className="text-xs font-bold uppercase tracking-[0.08em] text-slate-500">
+                  Key Results
+                </p>
+                <ul className="mt-2.5 space-y-1.5">
+                  {project.results.map((result) => (
+                    <li
+                      key={result}
+                      className="flex items-start gap-2 text-sm font-medium text-slate-700"
+                    >
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#1f4fe0]" />
+                      <span>{result}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </Card>
         ))}

@@ -1,6 +1,7 @@
 export type Service = {
   slug: string;
   title: string;
+  image: string;
   shortDescription: string;
   overview: string;
   benefits: string[];
@@ -11,6 +12,7 @@ export const services: Service[] = [
   {
     slug: "web-development",
     title: "Web Development",
+    image: "/portfolio/web-recruitment.webp",
     shortDescription:
       "Custom, high-performance websites and web applications built for scale.",
     overview:
@@ -47,6 +49,7 @@ export const services: Service[] = [
   {
     slug: "mobile-app-development",
     title: "Mobile App Development",
+    image: "/services/mobile-development.webp",
     shortDescription:
       "Native and cross-platform mobile apps for iOS and Android.",
     overview:
@@ -83,6 +86,7 @@ export const services: Service[] = [
   {
     slug: "ui-ux-design",
     title: "UI/UX Design",
+    image: "/services/ui-ux-design.webp",
     shortDescription:
       "User-centered interfaces that convert visitors into customers.",
     overview:
@@ -119,6 +123,7 @@ export const services: Service[] = [
   {
     slug: "digital-marketing",
     title: "Digital Marketing",
+    image: "/services/digital-marketing.webp",
     shortDescription:
       "Data-driven campaigns that grow traffic, leads, and revenue.",
     overview:
@@ -155,6 +160,7 @@ export const services: Service[] = [
   {
     slug: "ecommerce-solutions",
     title: "E-Commerce Solutions",
+    image: "/portfolio/retail-ecommerce.webp",
     shortDescription:
       "Online stores engineered for conversion and seamless checkout.",
     overview:
@@ -190,37 +196,38 @@ export const services: Service[] = [
   },
   {
     slug: "branding-identity",
-    title: "Branding & Identity",
+    title: "CRM & Business Systems",
+    image: "/services/crm-dashboard.webp",
     shortDescription:
-      "Memorable brand systems that communicate who you are.",
+      "Custom admin panels, CRM workflows, and scalable business dashboards.",
     overview:
-      "We craft logos, visual identity, and brand guidelines that create consistency across every touchpoint.",
+      "We build tailored CRM portals, vendor & invoice management systems, and real-time analytics dashboards that streamline operations.",
     benefits: [
-      "Logo and visual identity",
-      "Brand guidelines and voice",
-      "Marketing collateral templates",
-      "Consistent multi-channel presence",
+      "Custom role-based admin dashboards",
+      "Vendor, invoice & approval workflows",
+      "Real-time reporting & KPI analytics",
+      "Secure API & cloud integrations",
     ],
     process: [
       {
         step: 1,
         title: "Discovery",
-        description: "Clarify positioning, values, and audience.",
+        description: "Audit operational workflows, roles, and data sources.",
       },
       {
         step: 2,
-        title: "Concepts",
-        description: "Explore direction options and mood boards.",
+        title: "Architecture",
+        description: "Design modular dashboards, permissions, and schemas.",
       },
       {
         step: 3,
-        title: "Refinement",
-        description: "Finalize mark, palette structure, and type.",
+        title: "Development",
+        description: "Build automated workflows, charts, and integrations.",
       },
       {
         step: 4,
-        title: "Guidelines",
-        description: "Document usage rules for your team.",
+        title: "Rollout",
+        description: "Onboard your team with training and ongoing support.",
       },
     ],
   },

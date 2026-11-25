@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -59,7 +60,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden border-b border-slate-100 bg-[linear-gradient(105deg,#ffffff_0%,#f7f9ff_50%,#edf2ff_100%)] py-16 sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-slate-100 bg-white py-16 sm:py-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-[#dbe7ff]/60 blur-3xl"
@@ -73,30 +74,49 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             All Services
           </Link>
 
-          <div className="mt-6 flex items-center gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1f4fe0] text-white shadow-lg shadow-blue-600/25">
-              <ServiceIcon slug={service.slug} className="h-7 w-7" />
+          <div className="mt-8 grid items-center gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-6">
+              <div className="flex items-center gap-3.5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#1f4fe0] text-white shadow-lg shadow-blue-600/25">
+                  <ServiceIcon slug={service.slug} className="h-6 w-6" />
+                </div>
+                <span className="inline-flex items-center rounded-full bg-[#e6eeff] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#1d4ed8]">
+                  Service Overview
+                </span>
+              </div>
+
+              <h1 className="mt-5 text-3xl font-bold tracking-tight text-[#0b1533] sm:text-5xl">
+                {service.title}
+              </h1>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                {service.shortDescription}
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button href="/contact">
+                  Inquire About This Service
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Button>
+                <Button href="/portfolio" variant="secondary">
+                  View Case Studies
+                </Button>
+              </div>
             </div>
-            <span className="inline-flex items-center rounded-full bg-[#e6eeff] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#1d4ed8]">
-              Service Overview
-            </span>
-          </div>
 
-          <h1 className="mt-5 max-w-3xl text-3xl font-bold tracking-tight text-[#0b1533] sm:text-5xl">
-            {service.title}
-          </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            {service.shortDescription}
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/contact">
-              Inquire About This Service
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-            <Button href="/portfolio" variant="secondary">
-              View Case Studies
-            </Button>
+            <div className="lg:col-span-6">
+              <div className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-3 shadow-xl shadow-blue-900/[0.06]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-white">
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} showcase`}
+                    fill
+                    loading="eager"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
@@ -176,10 +196,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </ol>
       </Section>
 
-      <section className="border-b border-slate-100 bg-[#f6f9ff] py-16">
+      <section className="border-b border-slate-100 bg-white py-16">
         <Container>
           <Reveal>
-            <div className="rounded-3xl border border-[#dbe6ff] bg-[linear-gradient(115deg,#ffffff_0%,#f5f8ff_55%,#e8f0ff_100%)] p-8 text-center shadow-lg shadow-blue-900/[0.05] sm:p-12">
+            <div className="rounded-3xl border border-slate-200/80 bg-white p-8 text-center shadow-lg shadow-slate-900/[0.04] sm:p-12">
               <h2 className="text-2xl font-bold text-[#0b1533] sm:text-3xl">
                 Interested in{" "}
                 <span className="text-[#1f5bff]">{service.title}?</span>
@@ -211,23 +231,34 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <div className="grid gap-6 sm:grid-cols-3">
           {related.map((item, idx) => (
             <Reveal key={item.slug} delay={idx * 70}>
-              <Card className="flex h-full flex-col p-6">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#eef3ff] text-[#1f4fe0] transition-all duration-300 group-hover:bg-[#1f4fe0] group-hover:text-white">
-                  <ServiceIcon slug={item.slug} className="h-5 w-5" />
+              <Card className="flex h-full flex-col overflow-hidden p-0">
+                <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-slate-100 bg-white">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 640px) 33vw, 100vw"
+                    className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                  />
+                  <div className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 text-[#1f4fe0] shadow-sm transition-all duration-300 group-hover:bg-[#1f4fe0] group-hover:text-white">
+                    <ServiceIcon slug={item.slug} className="h-5 w-5" />
+                  </div>
                 </div>
-                <h3 className="text-base font-bold text-[#0b1533] group-hover:text-[#1f4fe0]">
-                  {item.title}
-                </h3>
-                <p className="mt-2 flex-1 text-sm text-slate-600">
-                  {item.shortDescription}
-                </p>
-                <Link
-                  href={`/services/${item.slug}`}
-                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1f4fe0]"
-                >
-                  View service
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="text-base font-bold text-[#0b1533] group-hover:text-[#1f4fe0]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm text-slate-600">
+                    {item.shortDescription}
+                  </p>
+                  <Link
+                    href={`/services/${item.slug}`}
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1f4fe0]"
+                  >
+                    View service
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </Card>
             </Reveal>
           ))}
