@@ -37,12 +37,21 @@ body {
   }
 }
 
-@keyframes marqueeSlow {
+@keyframes marqueeLeft {
   0% {
     transform: translate3d(0, 0, 0);
   }
   100% {
     transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -53,17 +62,18 @@ body {
 .animate-marquee-slow {
   display: flex;
   width: max-content;
-  animation: marqueeSlow var(--marquee-duration, 42s) linear infinite;
+  animation: marqueeLeft var(--marquee-duration, 38s) linear infinite;
   will-change: transform;
 }
 
-.animate-marquee-slow:hover {
-  animation-play-state: paused;
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight var(--marquee-duration, 42s) linear infinite;
+  will-change: transform;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-float-slow,
-  .animate-marquee-slow {
-    animation: none;
-  }
+.animate-marquee-slow:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
 }

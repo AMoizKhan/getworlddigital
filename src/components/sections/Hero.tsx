@@ -5,15 +5,7 @@ import { Container } from "@/components/ui";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[linear-gradient(100deg,#ffffff_0%,#f7f9ff_45%,#edf2ff_100%)] font-sans">
-      {/* Decorative background: soft diagonal blue bands (top-right) */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -right-[18%] -top-[40%] h-[140%] w-[55%] -rotate-[32deg] bg-gradient-to-b from-[#dfe8ff] via-[#e9efff]/80 to-transparent" />
-        <div className="absolute -right-[6%] -top-[35%] h-[120%] w-[22%] -rotate-[32deg] bg-gradient-to-b from-[#d3e0ff]/70 via-[#e3ebff]/50 to-transparent" />
-        <div className="absolute -left-40 bottom-[-30%] h-[420px] w-[420px] rounded-full bg-[#eef3ff] blur-3xl" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white/70" />
-      </div>
-
+    <section className="relative isolate overflow-hidden bg-transparent font-sans">
       <Container className="py-14 sm:py-16 lg:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
           {/* Copy */}
@@ -57,14 +49,14 @@ export function Hero() {
           {/* Visual */}
           <div className="relative">
             <Image
-              src="/home/hero-laptop.png"
+              src="/home/hero-laptop-cutout.png"
               alt="Laptop displaying the Get World Digital business dashboard"
               width={1376}
               height={768}
               loading="eager"
               fetchPriority="high"
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="h-auto w-full scale-110 [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)] lg:origin-left lg:scale-125"
+              className="h-auto w-full scale-105 drop-shadow-[0_20px_35px_rgba(11,21,51,0.12)] lg:origin-left lg:scale-115"
             />
           </div>
         </div>

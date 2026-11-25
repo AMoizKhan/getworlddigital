@@ -60,11 +60,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden border-b border-slate-100 bg-white py-16 sm:py-20">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-[#dbe7ff]/60 blur-3xl"
-        />
+      <section className="relative isolate overflow-hidden bg-transparent py-16 sm:py-20">
         <Container>
           <Link
             href="/services"
@@ -196,7 +192,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </ol>
       </Section>
 
-      <section className="border-b border-slate-100 bg-white py-16">
+      <section className="bg-transparent py-16">
         <Container>
           <Reveal>
             <div className="rounded-3xl border border-slate-200/80 bg-white p-8 text-center shadow-lg shadow-slate-900/[0.04] sm:p-12">

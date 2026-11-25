@@ -21,11 +21,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden border-b border-slate-100 bg-white py-16 sm:py-20">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-[#dbe7ff]/60 blur-3xl"
-        />
+      <section className="relative isolate overflow-hidden bg-transparent py-16 sm:py-20">
         <Container>
           <span className="inline-flex items-center gap-1.5 rounded-full bg-[#e6eeff] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#1d4ed8]">
             <Layers className="h-3.5 w-3.5" />

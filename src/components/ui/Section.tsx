@@ -30,7 +30,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative border-b border-slate-100 bg-white py-18 sm:py-22 ${className}`}
+      className={`relative bg-transparent py-18 sm:py-22 ${className}`}
     >
       <Container>
         <div

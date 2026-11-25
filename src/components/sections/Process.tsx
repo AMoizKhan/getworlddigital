@@ -1,81 +1,142 @@
-import { ChevronRight, Code2, Compass, Rocket, Search } from "lucide-react";
-import { Card, Reveal, Section } from "@/components/ui";
+"use client";
+
+import { useState } from "react";
+import { Code2, Compass, Palette, Rocket, Search } from "lucide-react";
+import { Container, Reveal } from "@/components/ui";
 
 const steps = [
   {
-    number: "1",
+    number: "01",
     icon: Search,
     title: "Discovery",
     description:
-      "Understand your goals, audience, constraints, and success metrics.",
+      "Understand your business goals, audience, constraints, and key success metrics.",
   },
   {
-    number: "2",
+    number: "02",
     icon: Compass,
     title: "Strategy",
     description:
-      "Define clear scope, system architecture, timeline, and delivery plan.",
+      "Define clear scope, system architecture, milestones, and a practical delivery plan.",
   },
   {
-    number: "3",
+    number: "03",
+    icon: Palette,
+    title: "UI/UX Design",
+    description:
+      "Craft intuitive user flows, interactive prototypes, and clean visual systems.",
+  },
+  {
+    number: "04",
     icon: Code2,
-    title: "Design & Build",
+    title: "Development",
     description:
-      "Iterate on UX, visual craft, and engineering in transparent sprints.",
+      "Engineer fast, scalable web, mobile, and CRM solutions in transparent sprints.",
   },
   {
-    number: "4",
+    number: "05",
     icon: Rocket,
-    title: "Delivery",
+    title: "Launch & Scale",
     description:
-      "Launch smoothly, measure results, and scale for long-term growth.",
+      "Deploy smoothly, track performance, and optimize continuously for long-term growth.",
   },
 ];
 
 export function Process() {
+  const [activeIndex, setActiveIndex] = useState(1);
+
   return (
-    <Section
+    <section
       id="process"
-      eyebrow="Our Process"
-      title="A smarter way to"
-      highlight="move forward."
-      subtitle="A simple, transparent execution workflow to turn your ideas into reliable digital products."
-      tone="tinted"
+      className="relative overflow-hidden bg-transparent py-20 sm:py-24"
     >
-      <ol className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {steps.map((item, idx) => (
-          <Reveal key={item.number} delay={idx * 80} className="relative">
-            <li className="h-full list-none">
-              <Card className="flex h-full flex-col p-6">
-                <div className="mb-5 flex items-center justify-between">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1f4fe0] text-sm font-bold text-white shadow-md shadow-blue-600/25 transition-transform duration-300 group-hover:scale-110">
-                    {item.number}
-                  </span>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#eef3ff] text-[#1f4fe0] transition-colors duration-300 group-hover:bg-[#e0ebff]">
-                    <item.icon className="h-5 w-5" />
+      <Container>
+        {/* Minimal editorial header matching reference */}
+        <Reveal>
+          <div className="max-w-xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+              Our Process
+            </p>
+            <div
+              aria-hidden="true"
+              className="mt-3 h-0.5 w-8 rounded-full bg-[#1f4fe0]"
+            />
+            <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-[#0b1533] sm:text-4xl lg:text-[2.75rem]">
+              A smarter way
+              <br />
+              to <span className="text-[#1f5bff]">move forward.</span>
+            </h2>
+          </div>
+        </Reveal>
+
+        {/* Minimal 5-step horizontal flow with oversized clipped numerals */}
+        <Reveal delay={90}>
+          <ol className="mt-14 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-5 lg:gap-x-6">
+            {steps.map((step, idx) => {
+              const isActive = activeIndex === idx;
+              const Icon = step.icon;
+
+              return (
+                <li
+                  key={step.number}
+                  onMouseEnter={() => setActiveIndex(idx)}
+                  onClick={() => setActiveIndex(idx)}
+                  className="group relative flex cursor-pointer flex-col items-center text-center"
+                >
+                  {/* Oversized bottom-clipped numeral */}
+                  <div className="relative flex h-[62px] w-full items-start justify-center overflow-hidden sm:h-[70px]">
+                    <span
+                      className={`select-none text-[5.5rem] font-black leading-[0.82] tracking-tighter tabular-nums transition-all duration-500 ease-out sm:text-[6.25rem] ${
+                        isActive
+                          ? "-translate-y-1 text-[#2955e6]"
+                          : "translate-y-2 text-slate-300/90 group-hover:translate-y-0 group-hover:text-[#2955e6]/80"
+                      }`}
+                    >
+                      {step.number}
+                    </span>
                   </div>
-                </div>
 
-                <h3 className="text-lg font-bold text-[#0b1533] transition-colors group-hover:text-[#1f4fe0]">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  {item.description}
-                </p>
-              </Card>
-            </li>
+                  {/* Thin animated progress baseline connecting the step flow */}
+                  <div className="relative mt-1 h-[2px] w-full bg-slate-200/70">
+                    <span
+                      aria-hidden="true"
+                      className={`absolute inset-y-0 left-1/2 h-full -translate-x-1/2 rounded-full bg-[#1f5bff] transition-all duration-500 ease-out ${
+                        isActive ? "w-16 opacity-100" : "w-0 opacity-0"
+                      }`}
+                    />
+                  </div>
 
-            {idx < steps.length - 1 ? (
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-4 top-1/2 z-10 hidden h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-[#1f4fe0] shadow-xs lg:flex"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </span>
-            ) : null}
-          </Reveal>
-        ))}
-      </ol>
-    </Section>
+                  {/* Step icon + title + concise description */}
+                  <div className="mt-5 flex flex-col items-center px-2">
+                    <div className="flex items-center gap-1.5">
+                      <Icon
+                        className={`h-4 w-4 transition-colors duration-300 ${
+                          isActive
+                            ? "text-[#1f5bff]"
+                            : "text-slate-400 group-hover:text-[#1f5bff]"
+                        }`}
+                      />
+                      <h3
+                        className={`text-base font-bold transition-colors duration-300 ${
+                          isActive
+                            ? "text-[#1f4fe0]"
+                            : "text-[#0b1533] group-hover:text-[#1f4fe0]"
+                        }`}
+                      >
+                        {step.title}
+                      </h3>
+                    </div>
+
+                    <p className="mt-2.5 max-w-[220px] text-xs leading-relaxed text-slate-600 sm:text-[13px]">
+                      {step.description}
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </Reveal>
+      </Container>
+    </section>
   );
 }

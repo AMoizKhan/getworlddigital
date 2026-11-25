@@ -32,7 +32,7 @@ const navItems = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/75 font-sans backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-white/75 font-sans backdrop-blur-md">
       <Container className="flex h-[72px] items-center justify-between gap-6">
         <div className="flex h-full items-center gap-8">
           <Logo />

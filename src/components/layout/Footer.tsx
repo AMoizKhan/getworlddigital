@@ -14,7 +14,7 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200/80 bg-white font-sans">
+    <footer className="bg-transparent font-sans">
       <Container className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
           <Logo />
@@ -90,7 +90,7 @@ export function Footer() {
         </div>
       </Container>
 
-      <div className="border-t border-slate-200/70 bg-white/60">
+      <div className="bg-transparent">
         <Container className="flex flex-col gap-2 py-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 GetWorldDigital. All rights reserved.</p>
           <p className="text-slate-500">

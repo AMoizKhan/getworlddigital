@@ -19,11 +19,7 @@ const team = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden border-b border-slate-100 bg-white py-16 sm:py-20">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-[#dbe7ff]/60 blur-3xl"
-        />
+      <section className="relative isolate overflow-hidden bg-transparent py-16 sm:py-20">
         <Container>
           <div className="grid items-center gap-10 lg:grid-cols-12">
             <div className="lg:col-span-6">

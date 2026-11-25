@@ -57,10 +57,10 @@ export function TrustIndicators() {
   return (
     <section
       aria-label="Trust and impact metrics"
-      className="relative border-y border-slate-200/70 bg-white"
+      className="relative bg-transparent"
     >
       {/* Partner Trust Strip */}
-      <div className="border-b border-slate-100 bg-white py-8">
+      <div className="bg-transparent py-8">
         <Container>
           <Reveal>
             <div className="flex items-center justify-center gap-4">
