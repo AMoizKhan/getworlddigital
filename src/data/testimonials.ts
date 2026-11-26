@@ -102,7 +102,7 @@ export const faqs: FAQItem[] = [
     id: "faq1",
     question: "What services does GetWorldDigital offer?",
     answer:
-      "We offer web development, mobile apps, UI/UX design, digital marketing, e-commerce solutions, and custom CRM systems. Each engagement is scoped to your goals and timeline.",
+      "We specialize in AI Chatbots, AI Voice Receptionists, Lead Generation & Follow-up, Appointment Booking Automation, Customer Support Automation, Email & WhatsApp Automation, CRM Automation, Custom AI Automation, and Mobile Applications.",
   },
   {
     id: "faq2",

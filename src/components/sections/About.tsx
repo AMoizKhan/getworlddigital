@@ -77,10 +77,10 @@ export function About() {
             {values.map((value, idx) => (
               <Reveal key={value.title} delay={120 + idx * 65}>
                 <Card className="h-full p-5">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#eef3ff] text-[#1f4fe0] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#1f4fe0] group-hover:text-white">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#eef3ff] text-[#0d57b8] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#0d57b8] group-hover:text-white">
                     <value.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-base font-bold text-[#0b1533]">
+                  <h3 className="text-base font-bold text-[#071a38]">
                     {value.title}
                   </h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-slate-600">

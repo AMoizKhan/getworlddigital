@@ -8,6 +8,7 @@ const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
+  { href: "/solutions", label: "Solutions" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
 ];
@@ -26,7 +27,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.1em] text-[#0b1533]">
+          <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.1em] text-[#071a38]">
             Quick Links
           </h3>
           <ul className="space-y-2.5">
@@ -34,7 +35,7 @@ export function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="group inline-flex items-center gap-1 text-sm text-slate-600 transition-colors hover:text-[#1f4fe0]"
+                  className="group inline-flex items-center gap-1 text-sm text-slate-600 transition-colors hover:text-[#0d57b8]"
                 >
                   <span>{link.label}</span>
                   <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
@@ -45,15 +46,15 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.1em] text-[#0b1533]">
+          <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.1em] text-[#071a38]">
             Services
           </h3>
           <ul className="space-y-2.5">
-            {services.slice(0, 5).map((service) => (
+            {services.slice(0, 6).map((service) => (
               <li key={service.slug}>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="group inline-flex items-center gap-1 text-sm text-slate-600 transition-colors hover:text-[#1f4fe0]"
+                  className="group inline-flex items-center gap-1 text-sm text-slate-600 transition-colors hover:text-[#0d57b8]"
                 >
                   <span>{service.title}</span>
                   <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
@@ -64,27 +65,44 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.1em] text-[#0b1533]">
-            Contact
+          <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.1em] text-[#071a38]">
+            Get In Touch
           </h3>
           <ul className="space-y-3.5 text-sm text-slate-600">
-            <li className="flex items-start gap-3">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#e6eeff] text-[#1f4fe0]">
-                <Mail className="h-4 w-4" />
-              </span>
-              <span className="pt-1">hello@getworlddigital.com</span>
+            <li>
+              <a
+                href="mailto:info@getworlddigital.com"
+                className="group flex items-start gap-3 transition-colors hover:text-[#0d57b8]"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#e6eeff] text-[#0d57b8] transition-colors group-hover:bg-[#0d57b8] group-hover:text-white">
+                  <Mail className="h-4 w-4" />
+                </span>
+                <span className="pt-1 break-all">info@getworlddigital.com</span>
+              </a>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#e6eeff] text-[#1f4fe0]">
-                <Phone className="h-4 w-4" />
-              </span>
-              <span className="pt-1">+1 (555) 010-2040</span>
+            <li>
+              <a
+                href="tel:+17136599748"
+                className="group flex items-start gap-3 transition-colors hover:text-[#0d57b8]"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#e6eeff] text-[#0d57b8] transition-colors group-hover:bg-[#0d57b8] group-hover:text-white">
+                  <Phone className="h-4 w-4" />
+                </span>
+                <span className="pt-1">+1 713 659 9748</span>
+              </a>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#e6eeff] text-[#1f4fe0]">
-                <MapPin className="h-4 w-4" />
-              </span>
-              <span className="pt-1">100 Digital Avenue, Suite 200</span>
+            <li>
+              <a
+                href="https://www.google.com/maps?cid=9007785866387238106&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-3 transition-colors hover:text-[#0d57b8]"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#e6eeff] text-[#0d57b8] transition-colors group-hover:bg-[#0d57b8] group-hover:text-white">
+                  <MapPin className="h-4 w-4" />
+                </span>
+                <span className="pt-1">View on Google Maps</span>
+              </a>
             </li>
           </ul>
         </div>

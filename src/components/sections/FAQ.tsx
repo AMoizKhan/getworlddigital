@@ -26,8 +26,8 @@ export function FAQ() {
               <div
                 className={`overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${
                   isOpen
-                    ? "border-[#1f4fe0]/40 shadow-lg shadow-blue-600/[0.06]"
-                    : "border-slate-200/80 shadow-xs hover:border-[#1f4fe0]/25"
+                    ? "border-[#0d57b8]/40 shadow-lg shadow-blue-600/[0.06]"
+                    : "border-slate-200/80 shadow-xs hover:border-[#0d57b8]/25"
                 }`}
               >
                 <button
@@ -36,10 +36,10 @@ export function FAQ() {
                   onClick={() => setOpenId(isOpen ? null : faq.id)}
                   className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left"
                 >
-                  <span className="flex items-center gap-3 text-base font-semibold text-[#0b1533]">
+                  <span className="flex items-center gap-3 text-base font-semibold text-[#071a38]">
                     <HelpCircle
                       className={`h-5 w-5 shrink-0 transition-colors duration-200 ${
-                        isOpen ? "text-[#1f4fe0]" : "text-slate-400"
+                        isOpen ? "text-[#0d57b8]" : "text-slate-400"
                       }`}
                     />
                     {faq.question}
@@ -47,8 +47,8 @@ export function FAQ() {
                   <span
                     className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
                       isOpen
-                        ? "rotate-180 bg-[#1f4fe0] text-white"
-                        : "bg-[#eef3ff] text-[#1f4fe0]"
+                        ? "rotate-180 bg-[#0d57b8] text-white"
+                        : "bg-[#eef3ff] text-[#0d57b8]"
                     }`}
                   >
                     <ChevronDown className="h-4 w-4" />

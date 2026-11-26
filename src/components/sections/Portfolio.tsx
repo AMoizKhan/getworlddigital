@@ -29,16 +29,16 @@ export function Portfolio() {
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1533]/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071a38]/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="absolute left-4 top-4 flex items-center gap-2">
-                  <span className="inline-flex items-center rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-[#1d4ed8] shadow-sm backdrop-blur-sm">
+                  <span className="inline-flex items-center rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-[#0d57b8] shadow-sm backdrop-blur-sm">
                     {project.industry}
                   </span>
                 </div>
                 <Link
                   href="/portfolio"
                   aria-label={`View ${project.title}`}
-                  className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-[#0b1533] opacity-0 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 hover:bg-[#1f4fe0] hover:text-white"
+                  className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-[#071a38] opacity-0 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 hover:bg-[#0d57b8] hover:text-white"
                 >
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
@@ -49,7 +49,7 @@ export function Portfolio() {
                   {project.client}
                 </p>
 
-                <h3 className="mt-1.5 text-xl font-bold text-[#0b1533] transition-colors group-hover:text-[#1f4fe0]">
+                <h3 className="mt-1.5 text-xl font-bold text-[#071a38] transition-colors group-hover:text-[#0d57b8]">
                   {project.title}
                 </h3>
 
@@ -63,7 +63,7 @@ export function Portfolio() {
                       key={result}
                       className="flex items-start gap-2 text-sm font-medium text-slate-700"
                     >
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#1f4fe0]" />
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0d57b8]" />
                       <span>{result}</span>
                     </li>
                   ))}
@@ -77,14 +77,14 @@ export function Portfolio() {
       <Reveal delay={180}>
         <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-slate-200/80 bg-white px-6 py-5 shadow-xs sm:flex-row sm:items-center">
           <div className="flex items-center gap-3 text-sm text-slate-600">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#dbe6ff] bg-white text-[#1f4fe0]">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#dbe6ff] bg-white text-[#0d57b8]">
               <Sparkles className="h-4 w-4" />
             </span>
             <p>
               Looking for a specific industry?{" "}
               <Link
                 href="/portfolio"
-                className="font-semibold text-[#1f4fe0] hover:underline"
+                className="font-semibold text-[#0d57b8] hover:underline"
               >
                 Browse the full portfolio
               </Link>

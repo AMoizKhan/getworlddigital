@@ -14,11 +14,11 @@ type ButtonProps = {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-[#1f4fe0] text-white shadow-md shadow-blue-600/25 hover:bg-[#1a43c4] hover:shadow-lg hover:shadow-blue-600/30 active:scale-[0.98]",
+    "bg-[#0d57b8] text-white shadow-md shadow-blue-600/25 hover:bg-[#09438f] hover:shadow-lg hover:shadow-blue-600/30 active:scale-[0.98]",
   secondary:
-    "border border-slate-300 bg-white text-[#0b1533] shadow-xs hover:border-[#1f4fe0]/40 hover:bg-[#f5f8ff] hover:text-[#1f4fe0] active:scale-[0.98]",
+    "border border-slate-300 bg-white text-[#071a38] shadow-xs hover:border-[#0d57b8]/40 hover:bg-[#f5f8ff] hover:text-[#0d57b8] active:scale-[0.98]",
   ghost:
-    "bg-[#eef3ff] text-[#1f4fe0] hover:bg-[#e1ebff] active:scale-[0.98]",
+    "bg-[#eef3ff] text-[#0d57b8] hover:bg-[#e1ebff] active:scale-[0.98]",
 };
 
 export function Button({

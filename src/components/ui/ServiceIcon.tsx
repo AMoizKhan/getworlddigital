@@ -1,10 +1,13 @@
 import {
-  Code2,
-  LayoutDashboard,
-  Palette,
-  ShoppingBag,
+  BotMessageSquare,
+  CalendarCheck,
+  Cpu,
+  Headset,
+  MessageCircle,
+  PhoneCall,
   Smartphone,
   TrendingUp,
+  Workflow,
 } from "lucide-react";
 
 type ServiceIconProps = {
@@ -14,18 +17,25 @@ type ServiceIconProps = {
 
 export function ServiceIcon({ slug, className = "h-6 w-6" }: ServiceIconProps) {
   switch (slug) {
-    case "mobile-app-development":
-      return <Smartphone className={className} />;
-    case "ui-ux-design":
-      return <Palette className={className} />;
-    case "digital-marketing":
+    case "ai-chatbot":
+      return <BotMessageSquare className={className} />;
+    case "ai-voice-receptionist":
+      return <PhoneCall className={className} />;
+    case "lead-generation-follow-up":
       return <TrendingUp className={className} />;
-    case "ecommerce-solutions":
-      return <ShoppingBag className={className} />;
-    case "branding-identity":
-      return <LayoutDashboard className={className} />;
-    case "web-development":
+    case "appointment-booking-automation":
+      return <CalendarCheck className={className} />;
+    case "customer-support-automation":
+      return <Headset className={className} />;
+    case "email-whatsapp-automation":
+      return <MessageCircle className={className} />;
+    case "crm-automation":
+      return <Workflow className={className} />;
+    case "custom-ai-automation":
+      return <Cpu className={className} />;
+    case "mobile-application":
+      return <Smartphone className={className} />;
     default:
-      return <Code2 className={className} />;
+      return <BotMessageSquare className={className} />;
   }
 }

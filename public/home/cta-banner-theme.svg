@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600" preserveAspectRatio="xMaxYMid slice" fill="none">
+  <defs>
+    <!-- Pure white left transitioning into bright cobalt-warm right -->
+    <linearGradient id="banner-base" x1="0" y1="300" x2="1920" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#fbfdff" />
+      <stop offset="74%" stop-color="#eef5ff" />
+      <stop offset="100%" stop-color="#fff4e6" />
+    </linearGradient>
+
+    <!-- Soft upper cobalt mist wave -->
+    <linearGradient id="wave-upper" x1="0" y1="0" x2="1920" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#eef5ff" stop-opacity="0.65" />
+      <stop offset="50%" stop-color="#cfe2fb" stop-opacity="0.52" />
+      <stop offset="100%" stop-color="#87b8f5" stop-opacity="0.62" />
+    </linearGradient>
+
+    <!-- Sweeping bottom cobalt-sky ribbon -->
+    <linearGradient id="wave-bottom" x1="220" y1="600" x2="1920" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e3effd" stop-opacity="0.45" />
+      <stop offset="46%" stop-color="#a8ccf7" stop-opacity="0.68" />
+      <stop offset="100%" stop-color="#2b7be9" stop-opacity="0.72" />
+    </linearGradient>
+
+    <!-- Mid-right crisp cobalt facet -->
+    <linearGradient id="facet-mid" x1="955" y1="340" x2="1780" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d57b8" stop-opacity="0.72" />
+      <stop offset="55%" stop-color="#2b7be9" stop-opacity="0.58" />
+      <stop offset="100%" stop-color="#96c3f8" stop-opacity="0.48" />
+    </linearGradient>
+
+    <!-- Signature Brand Orange-Gold geometric sail on right -->
+    <linearGradient id="sail-orange" x1="1470" y1="420" x2="1920" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f57c00" stop-opacity="0.92" />
+      <stop offset="55%" stop-color="#ff9800" stop-opacity="0.86" />
+      <stop offset="100%" stop-color="#ffcc80" stop-opacity="0.68" />
+    </linearGradient>
+
+    <!-- Outer right overlapping Navy-Cobalt glass curve -->
+    <linearGradient id="right-glass" x1="1620" y1="0" x2="1920" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d57b8" stop-opacity="0.55" />
+      <stop offset="60%" stop-color="#071a38" stop-opacity="0.48" />
+      <stop offset="100%" stop-color="#2b7be9" stop-opacity="0.42" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="600" fill="url(#banner-base)" />
+  <path d="M0 0 H740 C1020 90, 1420 120, 1920 82 V290 C1380 265, 760 220, 0 95 Z" fill="url(#wave-upper)" />
+  <path d="M510 600 C610 280, 920 165, 1340 245 C1580 290, 1780 250, 1920 190 V600 Z" fill="#d9ebff" opacity="0.48" />
+  <path d="M210 600 C660 405, 1260 280, 1920 265 V600 Z" fill="url(#wave-bottom)" />
+  <path d="M960 356 C1060 190, 1210 55, 1355 0 H1920 V290 C1570 300, 1240 330, 960 356 Z" fill="url(#facet-mid)" />
+  <path d="M960 356 C1250 285, 1600 225, 1920 185 V470 C1580 455, 1240 410, 960 356 Z" fill="#ffbe6b" opacity="0.28" />
+  <path d="M1470 422 C1540 220, 1665 80, 1795 0 H1920 V275 C1775 345, 1620 392, 1470 422 Z" fill="url(#sail-orange)" />
+  <path d="M1675 600 C1620 390, 1705 180, 1895 0 H1920 V600 Z" fill="url(#right-glass)" />
+  <path d="M960 356 C1255 318, 1590 292, 1920 282" stroke="#ffffff" stroke-width="2" opacity="0.38" />
+</svg>

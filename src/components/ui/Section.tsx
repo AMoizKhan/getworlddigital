@@ -39,14 +39,14 @@ export function Section({
           }`}
         >
           {eyebrow ? (
-            <span className="inline-flex items-center rounded-full border border-[#dbe6ff] bg-white px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#1d4ed8]">
+            <span className="inline-flex items-center rounded-full border border-[#dbe6ff] bg-white px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#0d57b8]">
               {eyebrow}
             </span>
           ) : null}
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#0b1533] sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#071a38] sm:text-4xl">
             {title}{" "}
             {highlight ? (
-              <span className="text-[#1f5bff]">{highlight}</span>
+              <span className="text-[#f57c00]">{highlight}</span>
             ) : null}
           </h2>
           {subtitle ? (

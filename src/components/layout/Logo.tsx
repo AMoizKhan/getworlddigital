@@ -5,25 +5,17 @@ export function Logo() {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-2.5"
+      className="group inline-flex items-center"
       aria-label="Get World Digital home"
     >
       <Image
-        src="/brand/logo-mark.png"
-        alt="Get World Digital logo"
-        width={225}
+        src="/brand/logo-full.png"
+        alt="Get World Digital — Innovate, Automate, Grow"
+        width={558}
         height={160}
         loading="eager"
-        className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02] sm:h-12"
       />
-      <span className="flex flex-col leading-none">
-        <span className="text-[17px] font-extrabold tracking-tight text-[#0b1533]">
-          GET WORLD
-        </span>
-        <span className="mt-1 text-[10px] font-semibold tracking-[0.42em] text-[#0b1533]">
-          DIGITAL
-        </span>
-      </span>
     </Link>
   );
 }

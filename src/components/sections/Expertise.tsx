@@ -3,15 +3,17 @@
 import Image from "next/image";
 import { useState, type CSSProperties } from "react";
 import {
-  Check,
+  ArrowUpRight,
+  CheckCircle2,
   Cloud,
   Layers,
   Monitor,
   Server,
   ShoppingBag,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
-import { Card, Reveal, Section } from "@/components/ui";
+import { Reveal, Section } from "@/components/ui";
 
 type TechCategory =
   | "All"
@@ -54,26 +56,52 @@ const tabs: { id: TechCategory; label: string; icon: LucideIcon }[] = [
   { id: "CMS & Commerce", label: "CMS & Commerce", icon: ShoppingBag },
 ];
 
-const capabilities = [
+type CapabilityCard = {
+  code: string;
+  category: Exclude<TechCategory, "All">;
+  icon: LucideIcon;
+  title: string;
+  tagline: string;
+  metric: string;
+  items: string[];
+};
+
+const capabilities: CapabilityCard[] = [
   {
+    code: "01",
+    category: "Frontend",
     icon: Monitor,
-    title: "Frontend",
-    items: ["React & Next.js", "Angular", "JavaScript / ES6+", "HTML5 & CSS3"],
+    title: "Frontend Engineering",
+    tagline: "Fast, accessible interfaces built for instant interaction and SEO.",
+    metric: "99+ Core Web Vitals",
+    items: ["React & Next.js", "Angular Apps", "JavaScript / ES6+", "HTML5 & CSS3"],
   },
   {
+    code: "02",
+    category: "Backend & Data",
     icon: Server,
     title: "Backend & Data",
-    items: ["Node.js APIs", "PHP Systems", "MySQL Databases", "Auth & Security"],
+    tagline: "Resilient APIs, structured databases, and enterprise-grade security.",
+    metric: "99.9% API Reliability",
+    items: ["Node.js APIs", "PHP Platforms", "MySQL Architecture", "Auth & Integrations"],
   },
   {
+    code: "03",
+    category: "Mobile & Cloud",
     icon: Cloud,
-    title: "Mobile & Cloud",
-    items: ["Flutter Apps", "AWS Infrastructure", "Microsoft Azure", "GitHub CI/CD"],
+    title: "Mobile & Cloud Ops",
+    tagline: "Cross-platform mobile apps backed by automated cloud infrastructure.",
+    metric: "Multi-Cloud Ready",
+    items: ["Flutter iOS & Android", "AWS Cloud", "Microsoft Azure", "GitHub CI/CD"],
   },
   {
+    code: "04",
+    category: "CMS & Commerce",
     icon: ShoppingBag,
-    title: "CMS & Commerce",
-    items: ["Shopify Stores", "WooCommerce", "WordPress", "Conversion Optimization"],
+    title: "CMS & E-Commerce",
+    tagline: "High-converting storefronts and effortless content management.",
+    metric: "Conversion-Focused",
+    items: ["Shopify Storefronts", "WooCommerce", "WordPress Systems", "CRO & Analytics"],
   },
 ];
 
@@ -95,7 +123,7 @@ function TechMarqueeRow({
   const track = buildLoop(items, 10);
 
   return (
-    <div className="relative overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
+    <div className="relative overflow-hidden py-2.5 [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
       <div
         style={{ "--marquee-duration": `${duration}s` } as CSSProperties}
         className={reverse ? "animate-marquee-reverse" : "animate-marquee-slow"}
@@ -105,22 +133,26 @@ function TechMarqueeRow({
             key={`${tech.slug}-${idx}`}
             className="w-40 shrink-0 pr-5 sm:w-44"
           >
-            <div className="group flex flex-col items-center justify-center rounded-2xl border border-slate-200/75 bg-white/85 px-4 py-5 shadow-xs backdrop-blur-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-[#1f4fe0]/40 hover:bg-white hover:shadow-lg hover:shadow-blue-600/10">
+            <div className="group relative flex flex-col items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-white px-4 py-5 shadow-sm shadow-blue-900/[0.03] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#0d57b8]/40 hover:shadow-xl hover:shadow-blue-600/10">
               <div className="relative flex h-14 w-14 items-center justify-center bg-transparent">
                 <Image
                   src={tech.image}
                   alt={tech.name}
                   width={110}
                   height={110}
-                  className="h-13 w-13 object-contain transition-transform duration-300 group-hover:scale-110"
+                  className="h-13 w-13 object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-115"
                 />
               </div>
-              <p className="mt-3 text-sm font-bold text-[#0b1533] transition-colors group-hover:text-[#1f4fe0]">
+              <p className="mt-3 text-sm font-bold text-[#071a38] transition-colors duration-200 group-hover:text-[#0d57b8]">
                 {tech.name}
               </p>
               <p className="mt-0.5 text-[11px] font-medium text-slate-500">
                 {tech.category}
               </p>
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-6 bottom-0 h-[2.5px] origin-center scale-x-0 rounded-full bg-gradient-to-r from-[#0d57b8] to-[#f57c00] transition-transform duration-300 ease-out group-hover:scale-x-100"
+              />
             </div>
           </div>
         ))}
@@ -167,10 +199,10 @@ export function Expertise() {
                 type="button"
                 aria-selected={isActive}
                 onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+                className={`inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 active:scale-[0.97] ${
                   isActive
-                    ? "bg-[#1f4fe0] text-white shadow-md shadow-blue-600/25"
-                    : "border border-slate-200 bg-white text-slate-700 hover:border-[#1f4fe0]/40 hover:text-[#1f4fe0]"
+                    ? "bg-[#0d57b8] text-white shadow-md shadow-blue-600/25"
+                    : "border border-slate-200 bg-white text-slate-700 hover:border-[#0d57b8]/40 hover:text-[#0d57b8]"
                 }`}
               >
                 <Icon className="h-4 w-4" />
@@ -182,7 +214,7 @@ export function Expertise() {
       </Reveal>
 
       {/* Continuous Slow Moving Transparent Tech Logos */}
-      <div key={activeTab} className="mb-12 space-y-3">
+      <div key={activeTab} className="mb-14 space-y-3">
         {activeTab === "All" ? (
           <>
             <TechMarqueeRow items={rowOne} duration={36} />
@@ -193,34 +225,135 @@ export function Expertise() {
         )}
       </div>
 
-      {/* Capability Summary Grid */}
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {capabilities.map((group, idx) => (
-          <Reveal key={group.title} delay={idx * 75}>
-            <Card className="h-full bg-white p-6 text-left">
-              <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#dbe6ff] bg-white text-[#1f4fe0] transition-all duration-300 group-hover:scale-110 group-hover:border-[#1f4fe0] group-hover:bg-[#1f4fe0] group-hover:text-white">
-                  <group.icon className="h-5 w-5" />
+      {/* Professional Animated Capability Cards */}
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {capabilities.map((group, idx) => {
+          const isSelected = activeTab === group.category;
+          const groupLogos = technologies
+            .filter((t) => t.category === group.category)
+            .slice(0, 4);
+
+          return (
+            <Reveal key={group.title} delay={idx * 85} className="h-full">
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() =>
+                  setActiveTab(isSelected ? "All" : group.category)
+                }
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveTab(isSelected ? "All" : group.category);
+                  }
+                }}
+                className={`group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border bg-white p-6 text-left transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-600/[0.11] ${
+                  isSelected
+                    ? "-translate-y-1 border-[#0d57b8]/60 shadow-xl shadow-blue-600/[0.12] ring-2 ring-[#0d57b8]/15"
+                    : "border-slate-200/80 shadow-md shadow-blue-900/[0.04] hover:border-[#0d57b8]/40"
+                }`}
+              >
+                {/* Animated top gradient bar */}
+                <span
+                  aria-hidden="true"
+                  className={`absolute inset-x-0 top-0 h-1 origin-left bg-gradient-to-r from-[#0d57b8] via-[#f57c00] to-[#ff9800] transition-transform duration-500 ease-out ${
+                    isSelected
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+
+                {/* Soft ambient top-right hover glow */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[#dbe7ff]/45 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                />
+
+                {/* Header row: animated icon + step badge */}
+                <div className="relative flex items-start justify-between gap-3">
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl transition-all duration-300 ease-out group-hover:-rotate-3 group-hover:scale-110 ${
+                      isSelected
+                        ? "bg-[#0d57b8] text-white shadow-lg shadow-blue-600/25"
+                        : "border border-[#dbe6ff] bg-white text-[#0d57b8] shadow-xs group-hover:border-[#0d57b8] group-hover:bg-[#0d57b8] group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-600/25"
+                    }`}
+                  >
+                    <group.icon className="h-5 w-5" />
+                  </div>
+
+                  <span className="font-mono text-xs font-bold tracking-widest text-slate-300 transition-colors duration-300 group-hover:text-[#f57c00]">
+                    {group.code}
+                  </span>
                 </div>
-                <h3 className="text-base font-bold text-[#0b1533]">
+
+                {/* Title & executive tagline */}
+                <h3
+                  className={`mt-5 text-lg font-bold tracking-tight transition-colors duration-300 ${
+                    isSelected
+                      ? "text-[#0d57b8]"
+                      : "text-[#071a38] group-hover:text-[#0d57b8]"
+                  }`}
+                >
                   {group.title}
                 </h3>
-              </div>
+                <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
+                  {group.tagline}
+                </p>
 
-              <ul className="space-y-2.5">
-                {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-2.5 rounded-xl border border-slate-200/70 bg-white px-3.5 py-2.5 text-sm font-medium text-slate-700 transition-colors duration-200 group-hover:border-[#1f4fe0]/30"
+                {/* Live transparent mini tech logo stack that fans on hover */}
+                <div className="mt-4 flex items-center gap-1.5">
+                  {groupLogos.map((logo, lIdx) => (
+                    <span
+                      key={logo.slug}
+                      style={{ transitionDelay: `${lIdx * 40}ms` }}
+                      className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200/80 bg-white p-1.5 shadow-2xs transition-all duration-300 ease-out group-hover:-translate-y-1 group-hover:border-[#c8dcff] group-hover:shadow-sm"
+                      title={logo.name}
+                    >
+                      <Image
+                        src={logo.image}
+                        alt={logo.name}
+                        width={24}
+                        height={24}
+                        className="h-5 w-5 object-contain"
+                      />
+                    </span>
+                  ))}
+                </div>
+
+                {/* Capability items with subtle staggered hover shift */}
+                <ul className="mt-5 flex-1 space-y-2 border-t border-slate-100 pt-4">
+                  {group.items.map((item, iIdx) => (
+                    <li
+                      key={item}
+                      style={{ transitionDelay: `${iIdx * 35}ms` }}
+                      className="flex items-center gap-2.5 text-[13px] font-medium text-slate-700 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-[#071a38]"
+                    >
+                      <CheckCircle2 className="h-4 w-4 shrink-0 text-[#f57c00] transition-transform duration-300 group-hover:scale-110" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Footer metric + interactive filter cue */}
+                <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#0d57b8]">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    {group.metric}
+                  </span>
+                  <span
+                    className={`flex h-7 w-7 items-center justify-center rounded-full border transition-all duration-300 ${
+                      isSelected
+                        ? "border-[#0d57b8] bg-[#0d57b8] text-white"
+                        : "border-slate-200 bg-white text-slate-400 group-hover:border-[#0d57b8] group-hover:bg-[#0d57b8] group-hover:text-white"
+                    }`}
                   >
-                    <Check className="h-4 w-4 shrink-0 text-[#1f4fe0]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          </Reveal>
-        ))}
+                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
+                </div>
+              </div>
+            </Reveal>
+          );
+        })}
       </div>
     </Section>
   );

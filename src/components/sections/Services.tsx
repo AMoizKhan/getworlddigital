@@ -25,18 +25,19 @@ export function Services() {
                   src={service.image}
                   alt={service.title}
                   fill
+                  unoptimized={service.image.endsWith(".svg")}
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.05]"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1533]/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="absolute bottom-3 left-4 flex h-11 w-11 items-center justify-center rounded-xl border border-white/80 bg-white/95 text-[#1f4fe0] shadow-md shadow-blue-900/10 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-[#1f4fe0] group-hover:bg-[#1f4fe0] group-hover:text-white">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071a38]/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute bottom-3 left-4 flex h-11 w-11 items-center justify-center rounded-xl border border-white/80 bg-white/95 text-[#0d57b8] shadow-md shadow-blue-900/10 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-[#0d57b8] group-hover:bg-[#0d57b8] group-hover:text-white">
                   <ServiceIcon slug={service.slug} className="h-5 w-5" />
                 </div>
               </div>
 
               {/* Card body */}
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-bold text-[#0b1533] transition-colors duration-200 group-hover:text-[#1f4fe0]">
+                <h3 className="text-lg font-bold text-[#071a38] transition-colors duration-200 group-hover:text-[#0d57b8]">
                   {service.title}
                 </h3>
 
@@ -47,7 +48,7 @@ export function Services() {
                 <div className="mt-5 border-t border-slate-100 pt-4">
                   <Link
                     href={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1f4fe0] transition-colors hover:text-[#1a43c4]"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0d57b8] transition-colors hover:text-[#09438f]"
                   >
                     Explore service
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

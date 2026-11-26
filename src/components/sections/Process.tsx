@@ -59,12 +59,12 @@ export function Process() {
             </p>
             <div
               aria-hidden="true"
-              className="mt-3 h-0.5 w-8 rounded-full bg-[#1f4fe0]"
+              className="mt-3 h-0.5 w-8 rounded-full bg-[#0d57b8]"
             />
-            <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-[#0b1533] sm:text-4xl lg:text-[2.75rem]">
+            <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-[#071a38] sm:text-4xl lg:text-[2.75rem]">
               A smarter way
               <br />
-              to <span className="text-[#1f5bff]">move forward.</span>
+              to <span className="text-[#f57c00]">move forward.</span>
             </h2>
           </div>
         </Reveal>
@@ -88,8 +88,8 @@ export function Process() {
                     <span
                       className={`select-none text-[5.5rem] font-black leading-[0.82] tracking-tighter tabular-nums transition-all duration-500 ease-out sm:text-[6.25rem] ${
                         isActive
-                          ? "-translate-y-1 text-[#2955e6]"
-                          : "translate-y-2 text-slate-300/90 group-hover:translate-y-0 group-hover:text-[#2955e6]/80"
+                          ? "-translate-y-1 text-[#0d57b8]"
+                          : "translate-y-2 text-slate-300/90 group-hover:translate-y-0 group-hover:text-[#0d57b8]/80"
                       }`}
                     >
                       {step.number}
@@ -100,7 +100,7 @@ export function Process() {
                   <div className="relative mt-1 h-[2px] w-full bg-slate-200/70">
                     <span
                       aria-hidden="true"
-                      className={`absolute inset-y-0 left-1/2 h-full -translate-x-1/2 rounded-full bg-[#1f5bff] transition-all duration-500 ease-out ${
+                      className={`absolute inset-y-0 left-1/2 h-full -translate-x-1/2 rounded-full bg-[#f57c00] transition-all duration-500 ease-out ${
                         isActive ? "w-16 opacity-100" : "w-0 opacity-0"
                       }`}
                     />
@@ -112,15 +112,15 @@ export function Process() {
                       <Icon
                         className={`h-4 w-4 transition-colors duration-300 ${
                           isActive
-                            ? "text-[#1f5bff]"
-                            : "text-slate-400 group-hover:text-[#1f5bff]"
+                            ? "text-[#f57c00]"
+                            : "text-slate-400 group-hover:text-[#f57c00]"
                         }`}
                       />
                       <h3
                         className={`text-base font-bold transition-colors duration-300 ${
                           isActive
-                            ? "text-[#1f4fe0]"
-                            : "text-[#0b1533] group-hover:text-[#1f4fe0]"
+                            ? "text-[#0d57b8]"
+                            : "text-[#071a38] group-hover:text-[#0d57b8]"
                         }`}
                       >
                         {step.title}

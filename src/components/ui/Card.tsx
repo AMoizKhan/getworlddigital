@@ -12,7 +12,7 @@ export function Card({
   interactive = true,
 }: CardProps) {
   const interactiveClasses = interactive
-    ? "transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#1f4fe0]/35 hover:shadow-xl hover:shadow-blue-600/[0.08]"
+    ? "transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#0d57b8]/35 hover:shadow-xl hover:shadow-blue-600/[0.08]"
     : "";
 
   return (

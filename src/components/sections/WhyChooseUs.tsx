@@ -45,10 +45,10 @@ export function WhyChooseUs() {
           {usps.map((usp, idx) => (
             <Reveal key={usp.title} delay={idx * 75}>
               <Card className="flex h-full flex-col p-6">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#eef3ff] text-[#1f4fe0] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#1f4fe0] group-hover:text-white group-hover:shadow-md group-hover:shadow-blue-600/20">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#eef3ff] text-[#0d57b8] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#0d57b8] group-hover:text-white group-hover:shadow-md group-hover:shadow-blue-600/20">
                   <usp.icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-base font-bold text-[#0b1533] transition-colors group-hover:text-[#1f4fe0]">
+                <h3 className="text-base font-bold text-[#071a38] transition-colors group-hover:text-[#0d57b8]">
                   {usp.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">

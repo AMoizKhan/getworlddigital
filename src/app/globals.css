@@ -2,10 +2,10 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0b1533;
-  --brand: #1f4fe0;
-  --brand-bright: #1f5bff;
-  --brand-dark: #1a43c4;
+  --foreground: #071a38;
+  --brand: #0d57b8;
+  --brand-bright: #f57c00;
+  --brand-dark: #09438f;
   --brand-soft: #eef3ff;
   --brand-pill: #e6eeff;
 }
@@ -76,4 +76,33 @@ body {
 .animate-marquee-slow:hover,
 .animate-marquee-reverse:hover {
   animation-play-state: paused;
+}
+
+@keyframes toastIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(24px, 0, 0) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes toastProgress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.animate-toast-in {
+  animation: toastIn 280ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-toast-progress {
+  transform-origin: left center;
+  animation: toastProgress var(--toast-duration, 4500ms) linear forwards;
 }

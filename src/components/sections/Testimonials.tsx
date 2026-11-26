@@ -15,11 +15,11 @@ export function Testimonials() {
       <Container>
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center rounded-full border border-[#dbe6ff] bg-white px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#1d4ed8]">
+            <span className="inline-flex items-center rounded-full border border-[#dbe6ff] bg-white px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-[#0d57b8]">
               Client Stories
             </span>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#0b1533] sm:text-4xl lg:text-[2.6rem]">
-              What Our <span className="text-[#1f5bff]">Clients</span> Say
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#071a38] sm:text-4xl lg:text-[2.6rem]">
+              What Our <span className="text-[#f57c00]">Clients</span> Say
             </h2>
             <p className="mt-3.5 text-base leading-relaxed text-slate-600 sm:text-lg">
               Real stories from real partners. Our clients share their
@@ -41,13 +41,13 @@ export function Testimonials() {
               key={`${item.id}-${idx}`}
               className="w-[330px] shrink-0 pr-6 sm:w-[390px]"
             >
-              <article className="group flex h-full flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-7 shadow-lg shadow-blue-900/[0.04] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#1f4fe0]/35 hover:shadow-xl hover:shadow-blue-600/10">
+              <article className="group flex h-full flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-7 shadow-lg shadow-blue-900/[0.04] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#0d57b8]/35 hover:shadow-xl hover:shadow-blue-600/10">
                 <div>
                   {/* Signature blue double quote + star rating */}
                   <div className="mb-4 flex items-center justify-between">
                     <span
                       aria-hidden="true"
-                      className="select-none font-serif text-5xl font-bold leading-none text-[#7ba4f7] transition-colors duration-300 group-hover:text-[#1f4fe0]"
+                      className="select-none font-serif text-5xl font-bold leading-none text-[#ffb75e] transition-colors duration-300 group-hover:text-[#0d57b8]"
                     >
                       &ldquo;
                     </span>
@@ -58,7 +58,7 @@ export function Testimonials() {
                       {Array.from({ length: item.rating }).map((_, sIdx) => (
                         <Star
                           key={`${item.id}-${idx}-s-${sIdx}`}
-                          className="h-4 w-4 fill-[#1f5bff] text-[#1f5bff]"
+                          className="h-4 w-4 fill-[#f57c00] text-[#f57c00]"
                         />
                       ))}
                     </div>
@@ -71,7 +71,7 @@ export function Testimonials() {
 
                 {/* Client human portrait & meta */}
                 <div className="mt-6 flex items-center gap-3.5 border-t border-slate-100 pt-5">
-                  <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-[#dbe6ff] transition-transform duration-300 group-hover:scale-105 group-hover:ring-[#1f4fe0]/50">
+                  <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-[#dbe6ff] transition-transform duration-300 group-hover:scale-105 group-hover:ring-[#0d57b8]/50">
                     <Image
                       src={item.avatar}
                       alt={item.name}
@@ -81,7 +81,7 @@ export function Testimonials() {
                     />
                   </div>
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-bold text-[#0b1533]">
+                    <p className="truncate text-sm font-bold text-[#071a38]">
                       {item.name}
                     </p>
                     <p className="truncate text-xs font-medium text-slate-500">
